@@ -57,7 +57,7 @@ def save_note(note: Note):
     
     return {"message": "Note saved successfully", "title": note.title}
 
-# Get all notes
+# List all notes
 @app.get("/notes")
 def get_notes():
     conn = sqlite3.connect("notes.db")
@@ -67,7 +67,7 @@ def get_notes():
     conn.close()
     return {"notes": [{"id": n[0], "title": n[1]} for n in notes]}
 
-# Get a specific note
+# Get a specific note to check the grammar
 @app.get("/notes/{note_id}")
 def get_note(note_id: int):
     conn = sqlite3.connect("notes.db")
