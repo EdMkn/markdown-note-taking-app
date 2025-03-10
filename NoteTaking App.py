@@ -90,6 +90,7 @@ def main():
         print("\nNote Taking Application")
     #    print("1. Add Note")
         print("2. View Notes")
+        print("3. Check a Note's grammar")
     #    print("3. Delete Note")
         print("4. Exit")
 
@@ -98,15 +99,19 @@ def main():
     #    if choice == '1':
     #        note = input("Enter your note: ")
     #        save_note(note)
-    '''    if choice == '2':
+        if choice == '2':
             all_notes = get_notes()
             print("Your Notes")
             for note in all_notes['notes']:
                 print(f"{note['id']}. {note['title']}")
+        elif choice == '3':
+            num_note = int(input("insert the id of the note"))
+            note = get_note(num_note)
+            print(f"{num_note}. {note['title']}\n {note['html']}")
+
         elif choice == '4':
             print("Exiting the Note Taking Application")
             break 
-    '''
 
 if __name__ == "__main__":
     main()
